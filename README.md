@@ -15,7 +15,7 @@ For local application starting (for development) make sure that you have locally
 ### Development
 
 1. Clone this repository on your machine
-2. `cd test-challenge`
+2. `cd challenge`
 3. Rename `www/.env.example` to `www/.env.local` (`cp www/.env.example www/.env.local`) and fill in values if it's need
 4. Rename `.env.example` to `.env.local` (`cp .env.example .env.local`) and fill in values if it's need
 5. `make up`
@@ -95,4 +95,4 @@ For deploying your application make sure that you have locally installed next ap
 1. Make changes in your code
 2. Commit it (optional)
 3. `make deploy`
-4. `make sync-db mode=production` (only if you have any changes Hasura)
+4. `make sync-db mode=production` (only if you have any changes in your Hasura)
