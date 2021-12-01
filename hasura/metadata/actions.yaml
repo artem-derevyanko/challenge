@@ -1,0 +1,11 @@
+actions:
+- name: long_tail
+  definition:
+    kind: ""
+    handler: '{{HASURA_GRAPHQL_ACTIONS_HANDLER_WEBHOOK_BASEURL}}/api/tail'
+custom_types:
+  enums: []
+  input_objects: []
+  objects:
+  - name: LongTail
+  scalars: []

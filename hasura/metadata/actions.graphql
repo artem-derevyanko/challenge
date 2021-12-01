@@ -1,0 +1,12 @@
+type Query {
+  long_tail(
+    tail: String!
+  ): LongTail
+}
+
+type LongTail {
+  id: Int!
+  title: String!
+  description: String!
+}
+

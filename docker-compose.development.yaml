@@ -1,0 +1,51 @@
+version: '3.6'
+
+services:
+  nextjs:
+    hostname: longtail.app
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: ./infrastracture/nextjs-dev/Dockerfile
+    user: '1000:1000'
+    working_dir: /usr/src/app/
+    volumes:
+      - ./www:/usr/src/app/
+    networks:
+      - default
+
+  db:
+    image: postgres:13.1
+    restart: always
+    volumes:
+    - db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: exampleuser
+      POSTGRES_PASSWORD: examplepass
+      POSTGRES_DB: exampledb
+    networks:
+      - default
+
+  graphql-engine:
+    hostname: hasura
+    image: hasura/graphql-engine:v2.0.10
+    ports:
+    - 8080:8080
+    restart: always
+    command: graphql-engine serve --server-host 0.0.0.0 --enable-console
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: "${HASURA_GRAPHQL_DATABASE_URL}"
+      HASURA_GRAPHQL_ACTIONS_HANDLER_WEBHOOK_BASEURL: "${HASURA_GRAPHQL_ACTIONS_HANDLER_WEBHOOK_BASEURL}"
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+    networks:
+      - default
+    depends_on:
+    - db
+
+volumes:
+  db:
+
+networks:
+  default:
+    name: app-network
