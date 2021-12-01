@@ -3,7 +3,7 @@ output "NEXT_DOCKER_REGISTRY" {
 }
 
 output "HASURA_GRAPHQL_DATABASE_URL" {
-  value     = "postgres://${var.db_username}:${var.db_password}@${aws_db_instance.app.endpoint}/${var.db_name}"
+  value = "postgres://${var.db_username}:${var.db_password}@${aws_db_instance.app.endpoint}/${var.db_name}"
   # sensitive = true -> for test purposes do this
 }
 
@@ -19,6 +19,6 @@ output "HASURA_HOST" {
   value = "http://${aws_lb.default.dns_name}:${var.hasura_port}"
 }
 
-output "APP URL" {
+output "APP_URL" {
   value = "http://${aws_lb.default.dns_name}"
 }

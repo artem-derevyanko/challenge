@@ -59,7 +59,7 @@ After application starting you can open [http://localhost:3000](http://localhost
 
 ## Example app
 
-Go to [example]()
+Go to [example](http://app-lb-1413657223.us-west-2.elb.amazonaws.com)
 
 ## Prerequirements:
 
