@@ -26,7 +26,6 @@ help: ## Show this help
 
 init-release: ## Initialize first release on AWS
 	$(terraform) init
-	$(terraform) fmt
 
 destroy-release: ## Destroy all resources for created release on AWS
 	$(terraform) apply -var-file=$(terraform_vars) -destroy

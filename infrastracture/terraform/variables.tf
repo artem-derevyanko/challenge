@@ -22,17 +22,17 @@ variable "db_version" {
 
 variable "db_name" {
   description = "DB NAME"
-  sensitive   = true
+  # sensitive = true -> for test purposes do this
 }
 
 variable "db_username" {
   description = "DB USERNAME"
-  sensitive   = true
+  # sensitive = true -> for test purposes do this
 }
 
 variable "db_password" {
   description = "DB PASSWORD"
-  sensitive   = true
+  # sensitive = true -> for test purposes do this
 }
 
 variable "app_port" {

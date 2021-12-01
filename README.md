@@ -16,8 +16,8 @@ For local application starting (for development) make sure that you have locally
 
 1. Clone this repository on your machine
 2. `cd test-challenge`
-3. Rename `www/.env.example` to `www/.env.local` (`mv www/.env.example www/.env.local`) and fill in values if it's need
-4. Rename `.env.example` to `.env.local` (`mv .env.example .env.local`) and fill in values if it's need
+3. Rename `www/.env.example` to `www/.env.local` (`cp www/.env.example www/.env.local`) and fill in values if it's need
+4. Rename `.env.example` to `.env.local` (`cp .env.example .env.local`) and fill in values if it's need
 5. `make up`
 6. `make start-dev`
 7.  Open [app](http://localhost:3000/) in your browser
@@ -80,10 +80,10 @@ For deploying your application make sure that you have locally installed next ap
 
 1. Move to project root
 2. `make init-release`
-3. Rename `example.tfvars` to `production.tfvars` (`mv infrastracture/terraform/example.tfvars infrastracture/terraform/production.tfvars`) and fill in all values.
+3. Rename `example.tfvars` to `production.tfvars` (`cp infrastracture/terraform/example.tfvars infrastracture/terraform/production.tfvars`) and fill in all values.
 4. `make release`
-5. Rename `www/.env.example.production` to `www/.env.production` (`mv www/.env.example.production www/.env.production`)
-5. Rename `.env.example.production` to `.env.production` (`mv .env.example.production .env.production`)
+5. Rename `www/.env.example.production` to `www/.env.production` (`cp www/.env.example.production www/.env.production`)
+5. Rename `.env.example.production` to `.env.production` (`cp .env.example.production .env.production`)
 6. You'll get Terraform output from previous command, so use it and fill in `.env.production` and `www/.env.production` variables.
 7. `make deploy` (*)
 8. `make sync-db mode=production`
